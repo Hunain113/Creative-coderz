@@ -1,0 +1,84 @@
+/* Base styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f2f6ff;
+  color: #333;
+}
+
+/* Header and Nav */
+header {
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Home Page Grid */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Card Boxes */
+.card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h2 {
+  margin: 16px;
+  font-size: 22px;
+}
+
+.card p {
+  margin: 0 16px 20px 16px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* JS Interaction Effect */
+.card.clicked {
+  border: 2px solid #4e54c8;
+  box-shadow: 0 0 15px #4e54c8;
+}
