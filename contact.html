@@ -2,39 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creative Coders - Contact</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Creative Coders</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7ff, #f3e8ff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #4b0082;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .card a {
+      font-size: 18px;
+      color: #5b5bff;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      color: #3333aa;
+    }
+
+    form {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: none;
+    }
+
+    button {
+      background-color: #5b5bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3333aa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 28px; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Creative Coders</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <h1>Contact Us</h1>
 
-  <main class="home-grid">
-    <div class="card" onclick="highlight(this)">
-      <h2>Phone</h2>
-      <p>+92 300 1367611</p>
+    <div class="card">
+      <img src="phone-icon.png" alt="Phone" />
+      <a href="tel:+923001234567">+92 300 1234567</a>
     </div>
 
-    <div class="card" onclick="highlight(this)">
-      <h2>WhatsApp</h2>
-      <p><a href="https://wa.me/923001367611" target="_blank">Chat on WhatsApp</a></p>
+    <div class="card">
+      <img src="whatsapp-icon.png" alt="WhatsApp" />
+      <a href="https://wa.me/923001234567" target="_blank">Chat on WhatsApp</a>
     </div>
 
-    <div class="card" onclick="highlight(this)">
-      <h2>Facebook</h2>
-      <p><a href="https://www.facebook.com/share/1DsKWnuoR8/" target="_blank">Visit Our Facebook Page</a></p>
+    <div class="card">
+      <img src="facebook-icon.png" alt="Facebook" />
+      <a href="https://www.facebook.com/share/1NwR8ZqrVE/" target="_blank">Facebook Page</a>
     </div>
-  </main>
 
-  <script src="script.js"></script>
+    <div class="card">
+      <img src="instagram-icon.png" alt="Instagram" />
+      <a href="https://www.instagram.com/hunain.qamar?igsh=dHp5eXR3ZDU3a3Q=" target="_blank">@hunain.qamar</a>
+    </div>
+
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+      alert("✅ Thank you! Your message has been received.");
+    }
+  </script>
 </body>
 </html>
